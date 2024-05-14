@@ -134,3 +134,48 @@ linechart = pd.DataFrame(
     .sum()
     .reset_index()
 )
+
+fig2 = px.line(
+    linechart,
+    x="month_year",
+    y="Sales",
+    labels={"Sales": "Amount"},
+    height=500,
+    width=1000,
+    template="gridon",
+)
+st.plotly_chart(fig2, use_container_width=True)
+
+with st.expander("Vizualizar dados"):
+    st.write(linechart.T.style.background_gradient(cmap="Blues"))
+    csv = linechart.to_csv(index=False).encode("utf-8")
+    st.download_button(
+        "Download data", data=csv, file_name="TimeSeries.csv", mime="text/csv"
+    )
+
+
+st.subheader("Visão hierárquica de vendas usando treemap")
+fig3 = px.treemap(
+    filtered_df,
+    path=["Region", "Category", "Sub-Category"],
+    values="Sales",
+    hover_data=["Sales"],
+    color="Sub-Category",
+)
+fig3.update_layout(width=800, height=650)
+st.plotly_chart(fig3, use_container_width=True)
+
+
+chart1, chart2 = st.columns((2))
+
+with chart1:
+    st.subheader("Segmento de vendas")
+    fig = px.pie(filtered_df, values="Sales", names="Segment", template="plotly_dark")
+    fig.update_traces(text=filtered_df["Segment"], textposition="inside")
+    st.plotly_chart(fig, use_container_width=True)
+
+with chart2:
+    st.subheader("Categoria de vendas")
+    fig = px.pie(filtered_df, values="Sales", names="Category", template="gridon")
+    fig.update_traces(text=filtered_df["Category"], textposition="inside")
+    st.plotly_chart(fig, use_container_width=True)
