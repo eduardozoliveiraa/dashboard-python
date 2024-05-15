@@ -1,12 +1,12 @@
 # Projeto de Dashboard em Python para Análise de Dados do Curso de Engenharia de Software da UGV
 
-Este é um projeto de dashboard desenvolvido em Python para a disciplina de Engenharia de Software ministrada pelo Professor Bruno Resende na Universidade da Grande Vitória (UGV). O objetivo deste projeto é fornecer uma interface interativa para visualização e análise de dados armazenados em planilhas do Google Sheets.
+Este é um projeto de dashboard desenvolvido em Python para a disciplina de Engenharia de Software ministrada pelo Professor Bruno Resende na UGV) O objetivo deste projeto é fornecer uma interface interativa para visualização e análise de dados armazenados em planilhas.
 
 ## Requisitos do Projeto
 
 - Python 3.x
-- Google Sheets API
-- Bibliotecas Python: pandas, matplotlib, gspread
+- 
+- Bibliotecas Python: streamlit, pandas, ploty.express
 
 A dashboard irá carregar os dados das planilhas compartilhadas e exibir as opções de visualização disponíveis.
 
@@ -18,4 +18,4 @@ A dashboard irá carregar os dados das planilhas compartilhadas e exibir as opç
 
 ## Autor
 
-Este projeto foi desenvolvido por André Nicolas Cordeiro, Eduardo Oliveira, Lucas Mikolaiewski e Luis Bueno como parte do curso de Engenharia de Software ministrado pelo Professor Bruno Resende na UGV.
+Este projeto foi desenvolvido por André Nicolas Cordeiro, Eduardo Oliveira, Lucas Mikolaiewski e Luis Bueno  ministrado pelo Professor Bruno Resende na UGV.
